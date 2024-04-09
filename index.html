@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generater</title>
+
+    <!-- google font reference -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <!-- for ccopy icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <!--  Page Title -->
+        <h1>Generate Password</h1>
+
+        <!-- Password Display & copy button -->
+        <div class="pass-display">
+            <input type="text" name="password" placeholder="Password" id="showPass" readonly>
+            <button onclick="copyToClipboard()" class="copybtn"><span id="copytext"></span><i class='fa-regular fa-copy'></i></button>
+        </div>
+
+        <!-- Input section -->
+        <div class="input-data">
+
+            <!-- password length range input -->
+            <div class="pass-range">
+                <div class="range-display">
+                    <span class="label">Length</span>
+                    <span id="rangevalue">0</span>
+                </div>
+
+                <input type="range" min="1" max="20" name="rangevalue" id="lengthrange">
+
+            </div>
+
+            <!--  checkboxes for character types -->
+            <div class="checkboxes">
+
+                <div>
+                    <input type="checkbox" name="uppercase" class="checks" id="uppercase">
+                    <label for="uppercase">Include Uppercase Latters</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" name="lowercase" class="checks" id="lowercase">
+                    <label for="lowercase">Include Lowercase Latters</label>
+                </div>
+                
+                <div>
+                    <input type="checkbox" name="numbers" class="checks" id="numbers">
+                    <label for="numbers">Include Numbers</label>
+                </div>
+                
+                <div>
+                    <input type="checkbox" name="symbol" class="checks" id="symbol">
+                    <label for="symbol">Include Sumbols</label>
+                </div>
+                
+            </div>
+
+            <!-- Strength of Password -->
+            <div class="strength">
+                <span class="label">Strength</span>
+                <div class="color"></div>
+            </div>
+
+            <!-- generate button -->
+            <button onclick="generatepass()" class="generater">Generate Password</button>
+
+        </div>
+
+    </div>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
